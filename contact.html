@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Me | Kritika Perti</title>
+  <meta name="description" content="Get in touch with Kritika Perti for software engineering opportunities, internships, and collaborations." />
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Floating Background Ambient Blobs -->
+  <div class="blob-container" aria-hidden="true">
+    <div class="ambient-blob blob-1"></div>
+    <div class="ambient-blob blob-2"></div>
+    <div class="ambient-blob blob-3"></div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <header class="header" id="header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        <span class="logo-bracket">&lt;</span>KP<span class="logo-dot">/</span><span class="logo-bracket">&gt;</span>
+      </a>
+
+      <nav class="navbar" id="navbar">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="skills.html" class="nav-link">Skills</a></li>
+          <li class="nav-item"><a href="education.html" class="nav-link">Education</a></li>
+          <li class="nav-item"><a href="cv.html" class="nav-link">CV</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link active">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Theme Toggle Button -->
+        <button id="theme-toggle" class="icon-btn" aria-label="Toggle dark/light theme" title="Toggle Theme">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+
+        <!-- Resume Download Button in Nav (points to original Resume) -->
+        <a href="KRITIKAPERTI_RESUME.docx" download="KRITIKAPERTI_RESUME.docx" class="btn btn-outline btn-sm nav-resume-btn" title="Download Resume Document">
+          <i class="fa-solid fa-file-word"></i>
+          <span>Resume</span>
+        </a>
+
+        <!-- Mobile Hamburger Toggle -->
+        <button id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="subpage-wrapper">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tag">Get in Touch</span>
+        <h1 class="section-title">Let's Connect &amp; <span class="gradient-text">Collaborate</span></h1>
+        <p class="section-subtitle">Have an internship opportunity, project collaboration, or just want to discuss software engineering? Send a message!</p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Left: Contact Information Cards -->
+        <div class="contact-info-col">
+          <div class="contact-info-card glass-panel">
+            <div class="contact-icon">
+              <i class="fa-solid fa-envelope"></i>
+            </div>
+            <div class="contact-text">
+              <span class="contact-label">Email Address</span>
+              <a href="mailto:pertikritika11@gmail.com" class="contact-val">pertikritika11@gmail.com</a>
+            </div>
+            <button class="copy-btn" id="copy-email-btn" title="Copy Email" aria-label="Copy Email">
+              <i class="fa-regular fa-copy"></i>
+            </button>
+          </div>
+
+          <div class="contact-info-card glass-panel">
+            <div class="contact-icon">
+              <i class="fa-solid fa-phone"></i>
+            </div>
+            <div class="contact-text">
+              <span class="contact-label">Phone Number</span>
+              <a href="tel:+917838963138" class="contact-val">+91 7838963138</a>
+            </div>
+          </div>
+
+          <div class="contact-info-card glass-panel">
+            <div class="contact-icon">
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
+            <div class="contact-text">
+              <span class="contact-label">Location</span>
+              <span class="contact-val">Govindpuram, Ghaziabad, Uttar Pradesh, India</span>
+            </div>
+          </div>
+
+          <!-- Resume Section Card (Preserved & Unchanged) -->
+          <div class="contact-info-card glass-panel">
+            <div class="contact-icon">
+              <i class="fa-solid fa-file-word"></i>
+            </div>
+            <div class="contact-text">
+              <span class="contact-label">Resume (Original DOCX)</span>
+              <a href="KRITIKAPERTI_RESUME.docx" download="KRITIKAPERTI_RESUME.docx" class="contact-val highlight-link">
+                KRITIKAPERTI_RESUME.docx &nbsp;<i class="fa-solid fa-download"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Updated CV Section Card -->
+          <div class="contact-info-card glass-panel">
+            <div class="contact-icon">
+              <i class="fa-solid fa-file-pdf"></i>
+            </div>
+            <div class="contact-text">
+              <span class="contact-label">Curriculum Vitae (Updated PDF)</span>
+              <a href="KRITIKAPERTI_CV.pdf" download="KRITIKAPERTI_CV.pdf" class="contact-val highlight-link">
+                KRITIKAPERTI_CV.pdf &nbsp;<i class="fa-solid fa-download"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Social Links Pill -->
+          <div class="contact-social-box glass-panel">
+            <span>Find me online:</span>
+            <div class="contact-social-icons">
+              <a href="https://github.com/kritikaperti" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="GitHub">
+                <i class="fa-brands fa-github"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/kritikaperti/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn">
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+              <a href="mailto:pertikritika11@gmail.com" class="social-icon" aria-label="Email">
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Interactive Contact Form -->
+        <div class="contact-form-col">
+          <div class="form-wrapper glass-panel">
+            <form id="contact-form" novalidate>
+              <div class="form-group">
+                <label for="name">Your Name <span class="required">*</span></label>
+                <div class="input-container">
+                  <i class="fa-regular fa-user"></i>
+                  <input type="text" id="name" name="name" placeholder="John Doe" required />
+                </div>
+                <span class="error-msg" id="name-error"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Your Email <span class="required">*</span></label>
+                <div class="input-container">
+                  <i class="fa-regular fa-envelope"></i>
+                  <input type="email" id="email" name="email" placeholder="john@example.com" required />
+                </div>
+                <span class="error-msg" id="email-error"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="subject">Subject <span class="required">*</span></label>
+                <div class="input-container">
+                  <i class="fa-solid fa-tag"></i>
+                  <input type="text" id="subject" name="subject" placeholder="Internship inquiry / Software project" required />
+                </div>
+                <span class="error-msg" id="subject-error"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Your Message <span class="required">*</span></label>
+                <div class="input-container textarea-container">
+                  <i class="fa-regular fa-comment-dots"></i>
+                  <textarea id="message" name="message" rows="5" placeholder="Hi Kritika, I'd like to discuss..." required></textarea>
+                </div>
+                <span class="error-msg" id="message-error"></span>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-submit" id="submit-btn">
+                <span>Send Message</span>
+                <i class="fa-solid fa-paper-plane"></i>
+              </button>
+
+              <div id="form-feedback" class="form-feedback" style="display: none;"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-left">
+        <a href="index.html" class="footer-logo">
+          <span class="logo-bracket">&lt;</span>KP<span class="logo-dot">/</span><span class="logo-bracket">&gt;</span>
+        </a>
+        <p class="footer-copy">
+          Designed &amp; Developed with passion by <strong>Kritika Perti</strong>.
+        </p>
+      </div>
+
+      <div class="footer-center">
+        <ul class="footer-nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="skills.html">Skills</a></li>
+          <li><a href="education.html">Education</a></li>
+          <li><a href="cv.html">CV</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-right">
+        <button id="back-to-top" class="back-to-top-btn" title="Back to Top" aria-label="Back to top">
+          <i class="fa-solid fa-chevron-up"></i>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification Container -->
+  <div id="toast" class="toast" role="alert" aria-live="assertive"></div>
+
+  <!-- Custom Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>

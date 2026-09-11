@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kritika Perti - CV</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 8mm 12mm 8mm 12mm;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Calibri', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+      color: #1a1a1a;
+      background: #ffffff;
+      line-height: 1.34;
+      font-size: 9.3pt;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    a {
+      color: #0f4c81;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Header Section */
+    .cv-header {
+      text-align: center;
+      padding-bottom: 5px;
+      border-bottom: 1.8px solid #0f4c81;
+      margin-bottom: 7px;
+    }
+
+    .cv-name {
+      font-size: 18pt;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: #0f4c81;
+      text-transform: uppercase;
+      margin-bottom: 2px;
+      line-height: 1.1;
+    }
+
+    .cv-target {
+      font-size: 10pt;
+      font-weight: 600;
+      color: #333333;
+      margin-bottom: 4px;
+      letter-spacing: 0.2px;
+    }
+
+    .cv-contact-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      font-size: 8.8pt;
+      color: #444444;
+    }
+
+    .cv-contact-item {
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .cv-contact-bar span.sep {
+      color: #999999;
+    }
+
+    /* Section Headings */
+    .cv-section {
+      margin-bottom: 7px;
+    }
+
+    .section-heading {
+      font-size: 10.3pt;
+      font-weight: 700;
+      color: #0f4c81;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      border-bottom: 1px solid #d0d7de;
+      padding-bottom: 1px;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+    }
+
+    /* Professional Summary */
+    .summary-text {
+      text-align: justify;
+      color: #2b2b2b;
+      font-size: 9.1pt;
+      line-height: 1.34;
+    }
+
+    /* Technical Skills */
+    .skills-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 9.1pt;
+    }
+
+    .skills-table td {
+      padding: 1px 0;
+      vertical-align: top;
+    }
+
+    .skills-category {
+      font-weight: 700;
+      color: #222222;
+      width: 27%;
+      white-space: nowrap;
+    }
+
+    .skills-list {
+      color: #2b2b2b;
+      width: 73%;
+    }
+
+    /* Education & Timeline */
+    .timeline-entry {
+      margin-bottom: 4px;
+    }
+
+    .timeline-entry:last-child {
+      margin-bottom: 0;
+    }
+
+    .timeline-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .entry-degree {
+      font-weight: 700;
+      font-size: 10pt;
+      color: #1a1a1a;
+    }
+
+    .entry-right {
+      font-size: 9.2pt;
+      font-weight: 600;
+      color: #444444;
+      white-space: nowrap;
+    }
+
+    .entry-sub {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 9.3pt;
+      color: #444444;
+      margin-top: 1px;
+    }
+
+    .entry-institution {
+      font-style: italic;
+      color: #333333;
+    }
+
+    .cgpa-highlight {
+      font-weight: 700;
+      color: #0f4c81;
+    }
+
+    .entry-desc {
+      font-size: 9.2pt;
+      color: #3b3b3b;
+      margin-top: 2px;
+      line-height: 1.35;
+    }
+
+    /* Projects */
+    .project-entry {
+      margin-bottom: 4.5px;
+    }
+
+    .project-entry:last-child {
+      margin-bottom: 0;
+    }
+
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .project-title {
+      font-weight: 700;
+      font-size: 9.6pt;
+      color: #1a1a1a;
+    }
+
+    .project-tech {
+      font-size: 8.5pt;
+      font-style: italic;
+      color: #555555;
+      font-weight: 500;
+    }
+
+    .project-bullets {
+      margin-top: 1px;
+      padding-left: 16px;
+      font-size: 8.9pt;
+      color: #333333;
+    }
+
+    .project-bullets li {
+      margin-bottom: 1.5px;
+      line-height: 1.3;
+    }
+
+    /* Certifications */
+    .cert-entry {
+      margin-bottom: 3.5px;
+    }
+
+    .cert-entry:last-child {
+      margin-bottom: 0;
+    }
+
+    .cert-title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 9.3pt;
+    }
+
+    .cert-title {
+      font-weight: 700;
+      color: #1a1a1a;
+    }
+
+    .cert-date {
+      font-size: 8.7pt;
+      color: #555555;
+    }
+
+    .cert-issuer {
+      font-size: 8.8pt;
+      color: #444444;
+      font-style: italic;
+    }
+
+    .cert-desc {
+      font-size: 8.7pt;
+      color: #444444;
+      margin-top: 1px;
+      line-height: 1.28;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- CV Header -->
+  <header class="cv-header">
+    <h1 class="cv-name">KRITIKA PERTI</h1>
+    <div class="cv-target">Aspiring Software Engineer &bull; B.Tech Computer Science Core</div>
+    <div class="cv-contact-bar">
+      <div class="cv-contact-item">Govindpuram, Ghaziabad, Uttar Pradesh, 201002</div>
+      <span class="sep">&bull;</span>
+      <div class="cv-contact-item">+91 7838963138</div>
+      <span class="sep">&bull;</span>
+      <div class="cv-contact-item">
+        <a href="mailto:pertikritika11@gmail.com">pertikritika11@gmail.com</a>
+      </div>
+      <span class="sep">&bull;</span>
+      <div class="cv-contact-item">
+        <a href="https://www.linkedin.com/in/kritikaperti/" target="_blank">linkedin.com/in/kritikaperti</a>
+      </div>
+      <span class="sep">&bull;</span>
+      <div class="cv-contact-item">
+        <a href="https://github.com/kritikaperti" target="_blank">github.com/kritikaperti</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Professional Summary -->
+  <section class="cv-section">
+    <h2 class="section-heading">Professional Summary</h2>
+    <p class="summary-text">
+      Motivated and detail-oriented Computer Science undergraduate aspiring to launch a career as a <strong>Software Engineer</strong>. Strong foundation in <strong>Data Structures, Algorithms (DSA)</strong>, and <strong>Object-Oriented Programming (OOP)</strong> with core proficiency in <strong>C++</strong> and modern full-stack technologies. Proven analytical and problem-solving abilities with hands-on experience developing modular academic software and solving algorithmic challenges. Eager to leverage strong technical capabilities to engineer scalable, high-performance software solutions within a fast-paced development team.
+    </p>
+  </section>
+
+  <!-- Technical Skills -->
+  <section class="cv-section">
+    <h2 class="section-heading">Technical Skills</h2>
+    <table class="skills-table">
+      <tr>
+        <td class="skills-category">Programming Languages:</td>
+        <td class="skills-list">C++, Python, C, Java, JavaScript, SQL</td>
+      </tr>
+      <tr>
+        <td class="skills-category">Frameworks &amp; Libraries:</td>
+        <td class="skills-list">React.js, Node.js, Express.js, Next.js, Django, FastAPI, Tailwind CSS, HTML5, CSS3</td>
+      </tr>
+      <tr>
+        <td class="skills-category">Databases &amp; Storage:</td>
+        <td class="skills-list">PostgreSQL, MongoDB, MySQL, Redis, DynamoDB</td>
+      </tr>
+      <tr>
+        <td class="skills-category">Methodologies &amp; Concepts:</td>
+        <td class="skills-list">Data Structures &amp; Algorithms (DSA), Object-Oriented Programming (OOP), RESTful APIs, TDD, SDLC</td>
+      </tr>
+      <tr>
+        <td class="skills-category">Developer Tools:</td>
+        <td class="skills-list">Git, GitHub, Visual Studio Code, MySQL Workbench, Postman</td>
+      </tr>
+    </table>
+  </section>
+
+  <!-- Education -->
+  <section class="cv-section">
+    <h2 class="section-heading">Education</h2>
+
+    <div class="timeline-entry">
+      <div class="timeline-header">
+        <span class="entry-degree">Bachelor of Technology in Computer Science Core</span>
+        <span class="entry-right">Expected Graduation: 2029</span>
+      </div>
+      <div class="entry-sub">
+        <span class="entry-institution">Galgotias University, Greater Noida, Uttar Pradesh</span>
+        <span class="cgpa-highlight">CGPA: 9.12 / 10</span>
+      </div>
+      <div class="entry-desc">
+        Focus on Advanced Data Structures, Algorithms, Object-Oriented Design, Operating Systems, and Software Architecture.
+      </div>
+    </div>
+
+    <div class="timeline-entry">
+      <div class="timeline-header">
+        <span class="entry-degree">Class XII (Senior Secondary School) &mdash; CBSE</span>
+        <span class="entry-right">Year of Passing: 2025</span>
+      </div>
+      <div class="entry-sub">
+        <span class="entry-institution">Dehradun Public School, Ghaziabad, Uttar Pradesh</span>
+        <span>Stream: Science (Physics, Chemistry, Mathematics)</span>
+      </div>
+    </div>
+
+    <div class="timeline-entry">
+      <div class="timeline-header">
+        <span class="entry-degree">Class X (Secondary School) &mdash; CBSE</span>
+        <span class="entry-right">Year of Passing: 2023</span>
+      </div>
+      <div class="entry-sub">
+        <span class="entry-institution">Dehradun Public School, Ghaziabad, Uttar Pradesh</span>
+        <span>Secondary School Curriculum</span>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Certifications & Training -->
+  <section class="cv-section">
+    <h2 class="section-heading">Certifications &amp; Training</h2>
+
+    <div class="cert-entry">
+      <div class="cert-title-row">
+        <span class="cert-title">OOPS using C++</span>
+        <span class="cert-date">Sep 2026</span>
+      </div>
+      <div class="cert-issuer">GUVI | HCL (Google for Education Partner) &bull; <a href="https://www.guvi.in/share-certificate/87g2I1QkHP6T8m8828" target="_blank">Verify Credential</a></div>
+      <div class="cert-desc">Implemented OOP principles (Inheritance, Polymorphism, Encapsulation, Abstraction), constructor chaining, and memory allocation in C++.</div>
+    </div>
+
+    <div class="cert-entry">
+      <div class="cert-title-row">
+        <span class="cert-title">C Programming Masterclass</span>
+        <span class="cert-date">Jan 2026</span>
+      </div>
+      <div class="cert-issuer">GUVI (in partnership with HCL &amp; Google for Education) &bull; <a href="https://www.guvi.in/certificate?id=C6N8aj568Yf71Dv063" target="_blank">Verify Credential</a></div>
+      <div class="cert-desc">Built strong foundation in core C concepts including data types, memory management, pointers, and modular functions.</div>
+    </div>
+
+    <div class="cert-entry">
+      <div class="cert-title-row">
+        <span class="cert-title">Computational Thinking</span>
+        <span class="cert-date">Jan 2026</span>
+      </div>
+      <div class="cert-issuer">GUVI (in partnership with HCL &amp; Google for Education) &bull; <a href="https://www.guvi.in/certificate?id=6786536AH7kl716V72" target="_blank">Verify Credential</a></div>
+      <div class="cert-desc">Mastered problem decomposition, pattern recognition, algorithmic efficiency, and abstraction techniques for complex software challenges.</div>
+    </div>
+  </section>
+
+  <!-- Personal Details -->
+  <section class="cv-section">
+    <h2 class="section-heading">Personal Details</h2>
+    <table class="skills-table">
+      <tr>
+        <td class="skills-category">Date of Birth:</td>
+        <td class="skills-list">09/11/2007</td>
+      </tr>
+      <tr>
+        <td class="skills-category">Father's Name:</td>
+        <td class="skills-list">Dr. Ashwin Perti</td>
+      </tr>
+      <tr>
+        <td class="skills-category">Mother's Name:</td>
+        <td class="skills-list">Archana Perti</td>
+      </tr>
+      <tr>
+        <td class="skills-category">Permanent Address:</td>
+        <td class="skills-list">Govindpuram, Ghaziabad, Uttar Pradesh &mdash; 201002</td>
+      </tr>
+    </table>
+  </section>
+
+</body>
+</html>
