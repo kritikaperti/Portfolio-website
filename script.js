@@ -225,7 +225,7 @@ function initContactForm() {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   }
 
-  contactForm.addEventListener('submit', (e) => {
+  contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     let isValid = true;
@@ -268,31 +268,60 @@ function initContactForm() {
 
     if (!isValid) return;
 
-    // Simulate sending form message
+    // Send real message via Formspree
     submitBtn.disabled = true;
     const originalText = submitBtn.innerHTML;
     submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
+    feedbackBox.style.display = 'none';
 
-    setTimeout(() => {
-      submitBtn.disabled = false;
-      submitBtn.innerHTML = originalText;
+    const senderName = nameInput.value.trim();
 
-      feedbackBox.className = 'form-feedback success';
+    try {
+      const response = await fetch('https://formspree.io/f/mjyvllrq', {
+        method: 'POST',
+        body: new FormData(contactForm),
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        feedbackBox.className = 'form-feedback success';
+        feedbackBox.innerHTML = `
+          <i class="fa-solid fa-circle-check"></i> Thank you, <strong>${senderName}</strong>! Your message has been sent successfully. I'll get back to you soon.
+        `;
+        feedbackBox.style.display = 'block';
+
+        showToast('Message sent successfully!');
+        contactForm.reset();
+
+        setTimeout(() => {
+          feedbackBox.style.display = 'none';
+        }, 7000);
+      } else {
+        const data = await response.json();
+        let errorMsg = 'Oops! There was a problem submitting your message.';
+        if (data && data.errors && data.errors.length > 0) {
+          errorMsg = data.errors.map(err => err.message).join(', ');
+        }
+        feedbackBox.className = 'form-feedback error';
+        feedbackBox.innerHTML = `
+          <i class="fa-solid fa-circle-exclamation"></i> ${errorMsg} Please email me directly at <a href="mailto:pertikritika11@gmail.com" style="text-decoration: underline; color: inherit;">pertikritika11@gmail.com</a>.
+        `;
+        feedbackBox.style.display = 'block';
+        showToast('Failed to send message. Please try again.');
+      }
+    } catch (err) {
+      feedbackBox.className = 'form-feedback error';
       feedbackBox.innerHTML = `
-        <i class="fa-solid fa-circle-check"></i> Thank you, <strong>${nameInput.value.trim()}</strong>! Your message has been sent successfully. I'll get back to you soon.
+        <i class="fa-solid fa-triangle-exclamation"></i> Network error. Please check your connection or email me directly at <a href="mailto:pertikritika11@gmail.com" style="text-decoration: underline; color: inherit;">pertikritika11@gmail.com</a>.
       `;
       feedbackBox.style.display = 'block';
-
-      showToast('Message sent successfully!');
-
-      // Reset Form fields
-      contactForm.reset();
-
-      // Hide message after 6 seconds
-      setTimeout(() => {
-        feedbackBox.style.display = 'none';
-      }, 6000);
-    }, 1000);
+      showToast('Network error while sending.');
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = originalText;
+    }
   });
 }
 
