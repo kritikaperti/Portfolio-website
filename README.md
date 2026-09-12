@@ -6,7 +6,7 @@ Welcome to the official repository for my personal developer portfolio and Curri
 - **Multi-Page Architecture**: Dedicated pages for Home (`index.html`), About (`about.html`), Skills (`skills.html`), Education &amp; Certifications (`education.html`), Curriculum Vitae (`cv.html`), and Contact (`contact.html`).
 - **Aesthetic Glassmorphism Design**: High-contrast UI, ambient gradient backdrops, frosted glass cards, and micro-interactions.
 - **Persistent Theme Switcher**: Instant Dark / Light mode toggle with `localStorage` state persistence.
-- **ATS-Friendly PDF CV**: Interactive viewer and direct download of `KRITIKAPERTI_CV.pdf` along with `KRITIKAPERTI_RESUME.docx`.
+- **ATS-Friendly Documents**: Interactive viewer and direct downloads for verified CV (`KRITIKAPERTI_CV.pdf`) and updated Resume (`KRITIKAPERTI_RESUME.pdf` & `KRITIKAPERTI_RESUME.docx`).
 - **Responsive &amp; Accessible**: Fully mobile-responsive layout with accessible drawer navigation.
 
 ## 🛠️ Built With
